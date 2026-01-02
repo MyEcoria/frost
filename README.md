@@ -7,6 +7,7 @@
 | Generic FROST implementation    | [`frost-core`]         | [![crates.io](https://img.shields.io/crates/v/frost-core.svg)](https://crates.io/crates/frost-core)                 | [![Documentation](https://docs.rs/frost-core/badge.svg)](https://docs.rs/frost-core)                 |
 | Ristretto255 ciphersuite        | [`frost-ristretto255`] | [![crates.io](https://img.shields.io/crates/v/frost-ristretto255.svg)](https://crates.io/crates/frost-ristretto255) | [![Documentation](https://docs.rs/frost-ristretto255/badge.svg)](https://docs.rs/frost-ristretto255) |
 | Ed25519 ciphersuite             | [`frost-ed25519`]      | [![crates.io](https://img.shields.io/crates/v/frost-ed25519.svg)](https://crates.io/crates/frost-ed25519)           | [![Documentation](https://docs.rs/frost-ed25519/badge.svg)](https://docs.rs/frost-ed25519)           |
+| Ed25519 ciphersuite             | [`frost-ed25519-blake2b`]      | [![crates.io](https://img.shields.io/crates/v/frost-ed25519.svg)](https://crates.io/crates/frost-ed25519)           | [![Documentation](https://docs.rs/frost-ed25519/badge.svg)](https://docs.rs/frost-ed25519)           |
 | Ed448 ciphersuite               | [`frost-ed448`]        | [![crates.io](https://img.shields.io/crates/v/frost-ed448.svg)](https://crates.io/crates/frost-ed448)               | [![Documentation](https://docs.rs/frost-ed448/badge.svg)](https://docs.rs/frost-ed448)               |
 | P-256 ciphersuite               | [`frost-p256`]         | [![crates.io](https://img.shields.io/crates/v/frost-p256.svg)](https://crates.io/crates/frost-p256)                 | [![Documentation](https://docs.rs/frost-p256/badge.svg)](https://docs.rs/frost-p256)                 |
 | secp256k1 ciphersuite           | [`frost-secp256k1`]    | [![crates.io](https://img.shields.io/crates/v/frost-secp256k1.svg)](https://crates.io/crates/frost-secp256k1)       | [![Documentation](https://docs.rs/frost-secp256k1/badge.svg)](https://docs.rs/frost-secp256k1)       |
@@ -61,6 +62,7 @@ of the v0.6.0 release (corresponding to commit 5fa17ed) of the following crates:
 
 - frost-core
 - frost-ed25519
+- frost-ed25519-blake2b
 - frost-ed448
 - frost-p256
 - frost-secp256k1
