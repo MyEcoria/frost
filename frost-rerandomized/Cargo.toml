@@ -1,5 +1,5 @@
 [package]
-name = "frost-rerandomized"
+name = "frost-rerandomized-myecoria"
 edition.workspace = true
 rust-version.workspace = true
 version.workspace = true

@@ -536,7 +536,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "3f9eec918d3f24069decb9af1554cad7c880e2da24a9afd88aca000531ab82c1"
 
 [[package]]
-name = "frost-core"
+name = "frost-core-myecoria"
 version = "2.3.0"
 dependencies = [
  "byteorder",
@@ -571,8 +571,8 @@ dependencies = [
  "curve25519-dalek",
  "document-features",
  "ed25519-dalek",
- "frost-core",
- "frost-rerandomized",
+ "frost-core-myecoria",
+ "frost-rerandomized-myecoria",
  "hex",
  "insta",
  "lazy_static",
@@ -594,8 +594,8 @@ dependencies = [
  "curve25519-dalek",
  "document-features",
  "ed25519-dalek",
- "frost-core",
- "frost-rerandomized",
+ "frost-core-myecoria",
+ "frost-rerandomized-myecoria",
  "hex",
  "insta",
  "lazy_static",
@@ -614,8 +614,8 @@ dependencies = [
  "criterion",
  "document-features",
  "ed448-goldilocks",
- "frost-core",
- "frost-rerandomized",
+ "frost-core-myecoria",
+ "frost-rerandomized-myecoria",
  "hex",
  "insta",
  "lazy_static",
@@ -634,8 +634,8 @@ version = "2.3.0"
 dependencies = [
  "criterion",
  "document-features",
- "frost-core",
- "frost-rerandomized",
+ "frost-core-myecoria",
+ "frost-rerandomized-myecoria",
  "hex",
  "insta",
  "lazy_static",
@@ -650,12 +650,12 @@ dependencies = [
 ]
 
 [[package]]
-name = "frost-rerandomized"
+name = "frost-rerandomized-myecoria"
 version = "2.3.0"
 dependencies = [
  "derive-getters",
  "document-features",
- "frost-core",
+ "frost-core-myecoria",
  "hex",
  "rand_core 0.6.4",
 ]
@@ -667,8 +667,8 @@ dependencies = [
  "criterion",
  "curve25519-dalek",
  "document-features",
- "frost-core",
- "frost-rerandomized",
+ "frost-core-myecoria",
+ "frost-rerandomized-myecoria",
  "hex",
  "insta",
  "lazy_static",
@@ -688,8 +688,8 @@ version = "2.3.0"
 dependencies = [
  "criterion",
  "document-features",
- "frost-core",
- "frost-rerandomized",
+ "frost-core-myecoria",
+ "frost-rerandomized-myecoria",
  "hex",
  "insta",
  "k256",
@@ -709,8 +709,8 @@ version = "2.3.0"
 dependencies = [
  "criterion",
  "document-features",
- "frost-core",
- "frost-rerandomized",
+ "frost-core-myecoria",
+ "frost-rerandomized-myecoria",
  "hex",
  "insta",
  "k256",

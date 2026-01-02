@@ -1,5 +1,5 @@
 [package]
-name = "frost-core"
+name = "frost-core-myecoria"
 edition.workspace = true
 rust-version.workspace = true
 version.workspace = true
