@@ -27,7 +27,9 @@ fn check_serialize_whole_vss_commitment() {
 #[test]
 fn check_deserialize_vss_commitment() {
     let rng = rand::rngs::OsRng;
-    frost_core::tests::vss_commitment::check_deserialize_vss_commitment::<Ed25519Blake2b512, _>(rng);
+    frost_core::tests::vss_commitment::check_deserialize_vss_commitment::<Ed25519Blake2b512, _>(
+        rng,
+    );
 }
 
 #[test]
@@ -58,5 +60,7 @@ fn check_deserialize_whole_vss_commitment_error() {
 #[test]
 fn check_compute_public_key_package() {
     let rng = rand::rngs::OsRng;
-    frost_core::tests::vss_commitment::check_compute_public_key_package::<Ed25519Blake2b512, _>(rng);
+    frost_core::tests::vss_commitment::check_compute_public_key_package::<Ed25519Blake2b512, _>(
+        rng,
+    );
 }

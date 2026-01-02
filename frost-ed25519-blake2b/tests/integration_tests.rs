@@ -74,9 +74,10 @@ fn check_refresh_shares_with_dealer() {
 fn check_refresh_shares_with_dealer_serialisation() {
     let rng = rand::rngs::OsRng;
 
-    frost_core::tests::refresh::check_refresh_shares_with_dealer_serialisation::<Ed25519Blake2b512, _>(
-        rng,
-    );
+    frost_core::tests::refresh::check_refresh_shares_with_dealer_serialisation::<
+        Ed25519Blake2b512,
+        _,
+    >(rng);
 }
 
 #[test]
@@ -200,9 +201,10 @@ fn check_refresh_shares_with_dkg() {
 fn check_refresh_shares_with_dkg_smaller_threshold() {
     let rng = rand::rngs::OsRng;
 
-    frost_core::tests::refresh::check_refresh_shares_with_dkg_smaller_threshold::<Ed25519Blake2b512, _>(
-        rng,
-    );
+    frost_core::tests::refresh::check_refresh_shares_with_dkg_smaller_threshold::<
+        Ed25519Blake2b512,
+        _,
+    >(rng);
 }
 
 #[test]
@@ -367,17 +369,19 @@ fn check_sign_with_dealer_and_identifiers() {
 #[test]
 fn check_sign_with_missing_identifier() {
     let rng = rand::rngs::OsRng;
-    frost_core::tests::ciphersuite_generic::check_sign_with_missing_identifier::<Ed25519Blake2b512, _>(
-        rng,
-    );
+    frost_core::tests::ciphersuite_generic::check_sign_with_missing_identifier::<
+        Ed25519Blake2b512,
+        _,
+    >(rng);
 }
 
 #[test]
 fn check_sign_with_incorrect_commitments() {
     let rng = rand::rngs::OsRng;
-    frost_core::tests::ciphersuite_generic::check_sign_with_incorrect_commitments::<Ed25519Blake2b512, _>(
-        rng,
-    );
+    frost_core::tests::ciphersuite_generic::check_sign_with_incorrect_commitments::<
+        Ed25519Blake2b512,
+        _,
+    >(rng);
 }
 
 #[tokio::test]

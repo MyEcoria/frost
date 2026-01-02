@@ -10,6 +10,7 @@ extern crate alloc;
 
 use alloc::collections::BTreeMap;
 
+use blake2::{Blake2b512, Digest};
 use curve25519_dalek::{
     constants::ED25519_BASEPOINT_POINT,
     edwards::{CompressedEdwardsY, EdwardsPoint},
@@ -18,7 +19,6 @@ use curve25519_dalek::{
 };
 use frost_rerandomized::RandomizedCiphersuite;
 use rand_core::{CryptoRng, RngCore};
-use blake2::{Blake2b512, Digest};
 
 use frost_core as frost;
 

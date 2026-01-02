@@ -78,7 +78,9 @@ mod tests {
 
     #[test]
     fn check_repair_share_step_2() {
-        frost_core::tests::repairable::check_repair_share_step_2::<Ed25519Blake2b512>(&REPAIR_SHARE);
+        frost_core::tests::repairable::check_repair_share_step_2::<Ed25519Blake2b512>(
+            &REPAIR_SHARE,
+        );
     }
 
     #[test]
