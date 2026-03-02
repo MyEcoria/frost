@@ -209,7 +209,7 @@ dependencies = [
 
 [[package]]
 name = "frost-ed25519-blake2b-wasm"
-version = "0.1.2"
+version = "0.1.4"
 dependencies = [
  "frost-ed25519-blake2b",
  "getrandom",

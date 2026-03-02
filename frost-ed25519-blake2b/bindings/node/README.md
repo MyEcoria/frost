@@ -98,6 +98,45 @@ Vérifie la signature finale contre la clé publique de groupe et le message.
 - `false`: signature cryptographiquement invalide
 - exception: problème de parsing/sérialisation
 
+## API DKG (sans dealer de confiance)
+
+Ces fonctions permettent de générer les clés FROST de façon distribuée.
+
+### `identifier_from_u16(identifier) -> Uint8Array`
+
+Construit un identifiant FROST sérialisé à partir d'un `u16` non nul.
+
+### `dkg_part1(identifier, max_signers, min_signers) -> DkgRound1Result`
+
+Exécute la partie 1 du DKG pour un participant.
+
+- `identifier`: `u16` non nul, unique par participant.
+- sortie:
+  - `identifier`: identifiant sérialisé
+  - `secret_package`: secret local round 1 (ne jamais transmettre)
+  - `package`: package public round 1 à diffuser à tous les autres participants
+
+### `dkg_part2(round1_secret_package_bytes, round1_packages) -> DkgRound2Result`
+
+Exécute la partie 2 du DKG pour un participant.
+
+- `round1_secret_package_bytes`: secret local issu de `dkg_part1`
+- `round1_packages`: `DkgRound1PackageList` contenant les packages round1 reçus des autres participants
+- sortie:
+  - `secret_package`: secret local round 2 (ne jamais transmettre)
+  - `packages`: liste de `DkgPackage` à envoyer individuellement aux destinataires
+
+### `dkg_part3(round2_secret_package_bytes, round1_packages, round2_packages) -> DkgRound3Result`
+
+Exécute la partie 3 du DKG et termine la génération distribuée.
+
+- `round2_secret_package_bytes`: secret local issu de `dkg_part2`
+- `round1_packages`: mêmes packages round1 utilisés à la partie 2
+- `round2_packages`: packages round2 reçus des autres participants
+- sortie:
+  - `key_package`: part de clé privée long terme du participant (secret)
+  - `public_key_package`: informations publiques du groupe (identiques pour tous)
+
 ## Structures TS (générées par wasm-bindgen)
 
 ### `DealerKeygenResult`
@@ -136,6 +175,42 @@ Vérifie la signature finale contre la clé publique de groupe et le message.
 - `push(identifier, signature_share)`: ajoute une signature partielle.
 - `len`: nombre d'entrées.
 - `clear()`: vide la liste.
+
+### `DkgPackage`
+
+- `identifier: Uint8Array`: destinataire (ou participant) associé au package.
+- `package: Uint8Array`: package DKG sérialisé.
+
+### `DkgRound1Result`
+
+- `identifier: Uint8Array`
+- `secret_package: Uint8Array`
+- `package: Uint8Array`
+
+### `DkgRound2Result`
+
+- `secret_package: Uint8Array`
+- `packages_len: number`
+- `package(index: number): DkgPackage`
+
+### `DkgRound3Result`
+
+- `key_package: Uint8Array`
+- `public_key_package: Uint8Array`
+
+### `DkgRound1PackageList`
+
+- `new DkgRound1PackageList()`
+- `push(identifier, package)`
+- `len`
+- `clear()`
+
+### `DkgRound2PackageList`
+
+- `new DkgRound2PackageList()`
+- `push(identifier, package)`
+- `len`
+- `clear()`
 
 ## Ordre d'utilisation recommandé
 
